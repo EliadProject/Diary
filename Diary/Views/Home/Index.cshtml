@@ -15,28 +15,28 @@
             <form>
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" />
+                    <input id="name" type="text" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label>Start Time</label>
-                    <input class="form-control" list="startTimes" />
+                    <input id="startTime" class="form-control" list="startTimes" />
 
                     <datalist id="startTimes">
                     </datalist>
                 </div>
                 <div class="form-group">
                     <label>End Time</label>
-                    <input class="form-control" list="endTimes"  />
+                    <input id="endTime" class="form-control" list="endTimes"  />
 
                     <datalist id="endTimes">
                     </datalist>
                 </div>
 
                 <div id="buttons">
-                    <button class="btn yellow">Add</button>
+                    <button id="add-btn"class="btn yellow">Add</button>
                     <span class="shadow"></span>
 
-                    <button class="btn blue">Show calender</button>
+                    <button id="show-btn"class="btn blue">Show calender</button>
                     <span class="shadow"></span>
                 </div>
 
@@ -45,21 +45,15 @@
         </div>
         <div class="col-1"></div>
         <div class="col-7">
-            <table>
+            <table id="diary-tbl">
                 <thead>
                 <tr>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
-                    <th>4</th>
+                   
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                 <td>4</td>
+                 
                 </tr>
                 </tbody>
 

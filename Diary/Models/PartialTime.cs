@@ -12,6 +12,14 @@ namespace Diary.Models
         public int peopleNum { get; set; }
         public string names { get; set; }
 
-
+        public void addPerson(string name)
+        {
+            string str = "";
+            if (this.names != "")
+            {
+                str = ", ";
+            }
+            this.names += str + name;
+        }
     }
 }
