@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Diary.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Diary.Controllers
 {
@@ -20,12 +22,18 @@ namespace Diary.Controllers
         }
 
         [HttpPost]
-        public IActionResult addPerson(FreeTime freeTime)
+        public IActionResult addPerson([FromBody]FreeTime freeTime)
         {
-            //diary.addName(freeTime);
-            freeTime.startTime = "08:00";
-            freeTime.endTime = "12:00";
-            freeTime.name = "eliad";
+            
+            //validate data
+            if (!DiaryValidation.isFreeTimeLegal(freeTime, diary))
+            {
+                dynamic error = new JObject();
+                error.ErrorCode = "UNAUTHORIZED_API_METHOD";
+                error.Description = "illegal data";
+               
+                return Json(JsonConvert.SerializeObject(error));
+            }
 
 
             diary.addName(freeTime);

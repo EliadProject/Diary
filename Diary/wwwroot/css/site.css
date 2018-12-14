@@ -11,6 +11,10 @@ body {
     font-size: 16px;
 }
 
+form p {
+    color: #FF6666;
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -104,4 +108,15 @@ td, th {
     padding: 6px;
     border: 1px solid #ccc;
     text-align: left;
+}
+
+@media (max-width: 1200px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+    .btn{
+        margin-bottom:10px;
+        float:left;
+    }
 }

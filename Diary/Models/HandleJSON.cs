@@ -83,6 +83,24 @@ namespace Diary.Models
         {
             return JsonConvert.SerializeObject(partialTimes);
         }
+        public bool appearInStart(string startTime)
+        {
+            foreach (PartialTime partialTime in partialTimes)
+            {
+                if (partialTime.startTime.Equals(startTime))
+                    return true;
+            }
+            return false;
+        }
+        public bool appearInEnd(string endTime)
+        {
+            foreach (PartialTime partialTime in partialTimes)
+            {
+                if (partialTime.endTime.Equals(endTime))
+                    return true;
+            }
+            return false;
+        }
 
     }
 }

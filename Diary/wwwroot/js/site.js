@@ -24,20 +24,61 @@ $("#add-btn").click(function (event) {
     //don't refresh
     event.preventDefault();
 
+    //validate data
+
+    let name  = $('#name');
+    if (!name[0].checkValidity()) {
+        document.getElementById("error-name").innerHTML = name[0].validationMessage;
+        return;
+    }
+    else {
+        document.getElementById("error-name").innerHTML = "";
+    }
+    let startTime = $('#startTime');
+    if (!startTime[0].checkValidity()) {
+        document.getElementById("error-startTime").innerHTML = startTime[0].validationMessage;
+        return;
+    } 
+    else {
+        document.getElementById("error-startTime").innerHTML = "";
+    }
+    let endTime = $('#endTime');
+    if (!endTime[0].checkValidity()) {
+        document.getElementById("error-endTime").innerHTML = endTime[0].validationMessage;
+        return;
+    } else {
+        document.getElementById("error-endTime").innerHTML = "";
+    }
     //retreive data
+    /*
     let freeTime = new Object();
 
-    freeTime.name = $("#name").val();
-    freeTime.startTime = $("#startTime").val();
-    freeTime.endTime = $("#endTime").val();
+    freeTime.name = name.val();
+    freeTime.startTime = startTime.val();
+    freeTime.endTime = endTime.val();
+    */
+
+    let freeTime = {
+        name: name.val(),
+        startTime: startTime.val(),
+        endTime: endTime.val()
+    }
+
 
     $.ajax({
         url: "/diary/addPerson",
         type: "POST",
         data: JSON.stringify(freeTime),
-        contentType: 'application/json'
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8'
     }).done(function (diaryJSON) {
-        manipulateHTMLTable($('#diary-tbl'), JSON.parse(diaryJSON));
+        let diary = JSON.parse(diaryJSON);
+        if (diary.ErrorCode == 'UNAUTHORIZED_API_METHOD') {
+            document.getElementById("error-validation").innerHTML = diary.Description;
+        }
+        else {
+            manipulateHTMLTable($('#diary-tbl'), diary);
+        }
     });
 
 });

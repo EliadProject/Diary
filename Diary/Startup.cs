@@ -18,8 +18,7 @@ namespace Diary
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
-            HandleJSON.getInstance();
+            Configuration = configuration; 
         }
 
         public IConfiguration Configuration { get; }
