@@ -8,7 +8,7 @@ namespace UnitTest
         [TestMethod]
         public void TestMethod1()
         {
-            IHandleData diaryService = new HandleJSON();
+            DiaryService diaryService = new DiaryService(new HandleJSON());
             Assert.AreEqual(DiaryValidation.isFreeTimeLegal(new FreeTime("Eliad","08:00","12:00"), diaryService),true);
             Assert.AreEqual(DiaryValidation.isFreeTimeLegal(new FreeTime("", "12:00", "10:00"), diaryService), false);
             Assert.AreEqual(DiaryValidation.isFreeTimeLegal(new FreeTime("Eliad", "12:30", "16:00"), diaryService), false);

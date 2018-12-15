@@ -8,7 +8,7 @@ namespace Diary.Models
 {
     public static class DiaryValidation
     {
-        public static  bool isFreeTimeLegal(FreeTime freeTime, IHandleData diaryService)
+        public static  bool isFreeTimeLegal(FreeTime freeTime, DiaryService diaryService)
         {
             //checks if start and end time appear in the list 
             if  (!diaryService.isAppearInStart(freeTime.startTime))

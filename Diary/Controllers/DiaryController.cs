@@ -12,10 +12,10 @@ namespace Diary.Controllers
     public class DiaryController : Controller
     {
         //HandleJSON diary = HandleJSON.getInstance();
-        IHandleData diaryService;
+        DiaryService diaryService;
         public DiaryController(IHandleData handleData)
         {
-            this.diaryService = handleData;
+            this.diaryService = new DiaryService(handleData);
         }
         public IActionResult getStartTimes()
         {
@@ -39,7 +39,6 @@ namespace Diary.Controllers
                
                 return Json(JsonConvert.SerializeObject(error));
             }
-
 
             diaryService.addName(freeTime);
             return Json(diaryService.getJSON());

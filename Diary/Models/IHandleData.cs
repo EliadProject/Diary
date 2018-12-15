@@ -6,16 +6,9 @@ using System.Threading.Tasks;
 namespace Diary.Models
 {
     public interface IHandleData 
-    {
-        List<String> getStartTimes();
-        List<String> getEndTimes();
-
-        void addName(FreeTime freeTime);
-    
-        string getJSON();
-
-        bool isAppearInStart(string startTime);
-        bool isAppearInEnd(string endTime);
-        
+    { 
+        string getJSON(Diary diary);
+        Diary getDiary();
+        void updateDiary(List<PartialTime> partialTimes);
     }
 }
