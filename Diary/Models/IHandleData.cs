@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Diary.Models
 {
-    interface IHandleData 
+    public interface IHandleData 
     {
         List<String> getStartTimes();
         List<String> getEndTimes();

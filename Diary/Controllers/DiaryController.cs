@@ -12,14 +12,18 @@ namespace Diary.Controllers
     public class DiaryController : Controller
     {
         //HandleJSON diary = HandleJSON.getInstance();
-        DataService dataService = new DataService();
+        BuisnessLogic buisnessLogic;
+        public DiaryController(IHandleData handleData)
+        {
+            buisnessLogic = new BuisnessLogic(handleData);
+        }
         public IActionResult getStartTimes()
         {
-            return Json(dataService.getStartTimes());
+            return Json(buisnessLogic.getStartTimes());
         }
         public IActionResult getEndTimes()
         {
-            return Json(dataService.getEndTimes());
+            return Json(buisnessLogic.getEndTimes());
         }
 
         [HttpPost]
@@ -27,7 +31,7 @@ namespace Diary.Controllers
         {
             
             //validate data
-            if (!DiaryValidation.isFreeTimeLegal(freeTime,dataService))
+            if (!DiaryValidation.isFreeTimeLegal(freeTime, buisnessLogic))
             {
                 dynamic error = new JObject();
                 error.ErrorCode = "UNAUTHORIZED_API_METHOD";
@@ -37,13 +41,13 @@ namespace Diary.Controllers
             }
 
 
-            dataService.addName(freeTime);
-            return Json(dataService.getJSON());
+            buisnessLogic.addName(freeTime);
+            return Json(buisnessLogic.getJSON());
         }
 
         public IActionResult getDiary()
         {
-            return Json(dataService.getJSON());
+            return Json(buisnessLogic.getJSON());
         }
     }
 }

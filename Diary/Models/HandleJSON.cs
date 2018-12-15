@@ -15,7 +15,7 @@ namespace Diary.Models
         private static Object lockObj = new Object();
 
         private List<PartialTime> partialTimes;
-        private HandleJSON()
+        public HandleJSON()
         {
              partialTimes = JsonConvert.DeserializeObject<List<PartialTime>>(File.ReadAllText(JSON_PATH));
         }
@@ -23,17 +23,7 @@ namespace Diary.Models
         {
             partialTimes = JsonConvert.DeserializeObject<List<PartialTime>>(File.ReadAllText(JSON_PATH));
         }
-        public static  HandleJSON getInstance()
-        {
-            if(handleJSON == null)
-            {
-                lock (lockObj)
-                {
-                    handleJSON = new HandleJSON();
-                }
-            }
-            return handleJSON;
-        }
+        
         public List<String> getStartTimes()
         {
             List<String> startTimeList = new List<string>();
