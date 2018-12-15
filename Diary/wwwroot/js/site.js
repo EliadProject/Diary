@@ -78,7 +78,7 @@ function manipulateHTMLTable(table, json) {
     //remove all rows
     table.find("tr").remove();
 
-    //manipulate headers
+    //manipulate theader
     let header = table.find("thead");
     let headerText = '<tr>'
     Object.keys(json[0]).forEach(function (key) {
@@ -87,7 +87,7 @@ function manipulateHTMLTable(table, json) {
     headerText += '</tr>';
     header.append(headerText);
 
-    //manipulate body
+    //manipulate tbody
     let body = table.find('tbody');
     let trText ="";
     json.forEach(function (line,index) {

@@ -1,1 +1,56 @@
-[{"startTime":"08:00","endTime":"09:00","peopleNum":1,"names":"Tedis"},{"startTime":"09:00","endTime":"10:00","peopleNum":2,"names":"Eliad Vertman, Tedis"},{"startTime":"10:00","endTime":"11:00","peopleNum":4,"names":"Matan, Eliad, Eliad Vertman, Tedis"},{"startTime":"11:00","endTime":"12:00","peopleNum":4,"names":"Matan, Eliad, Eliad Vertman, Tedis"},{"startTime":"12:00","endTime":"13:00","peopleNum":4,"names":"Matan, Eliad, Eliad Vertman, Tedis"},{"startTime":"13:00","endTime":"14:00","peopleNum":4,"names":"Matan, Eliad, Eliad Vertman, Tedis"},{"startTime":"14:00","endTime":"15:00","peopleNum":3,"names":"Matan, Eliad, Tedis"},{"startTime":"15:00","endTime":"16:00","peopleNum":0,"names":""},{"startTime":"16:00","endTime":"17:00","peopleNum":0,"names":""}]
+[
+  {
+    "endTime": "09:00",
+    "names": "",
+    "peopleNum": 0,
+    "startTime": "08:00"
+  },
+  {
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "peopleNum": 0,
+    "names": ""
+  },
+  {
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "peopleNum": 0,
+    "names": ""
+  },
+  {
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "peopleNum": 0,
+    "names": ""
+  },
+  {
+    "startTime": "12:00",
+    "endTime": "13:00",
+    "peopleNum": 0,
+    "names": ""
+  },
+  {
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "peopleNum": 0,
+    "names": ""
+  },
+  {
+    "startTime": "14:00",
+    "endTime": "15:00",
+    "peopleNum": 0,
+    "names": ""
+  },
+    {
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "peopleNum": 0,
+      "names": ""
+    },
+    {
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "peopleNum": 0,
+      "names": ""
+    }
+    ]

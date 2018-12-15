@@ -34,7 +34,6 @@ namespace Diary.Models
             }
                    
         }
-
         public bool isAppearInStart(string startTime)
         {
             return diary.isAppearInStart(startTime);
