@@ -8,12 +8,12 @@ namespace Diary.Models
 {
     public static class DiaryValidation
     {
-        public static  bool isFreeTimeLegal(FreeTime freeTime, BuisnessLogic dataService)
+        public static  bool isFreeTimeLegal(FreeTime freeTime, IHandleData diaryService)
         {
             //checks if start and end time appear in the list 
-            if  (!dataService.isAppearInStart(freeTime.startTime))
+            if  (!diaryService.isAppearInStart(freeTime.startTime))
                 return false;
-            if (!dataService.isAppearInEnd(freeTime.endTime))
+            if (!diaryService.isAppearInEnd(freeTime.endTime))
                 return false;
 
             //checks if end is bigger than start

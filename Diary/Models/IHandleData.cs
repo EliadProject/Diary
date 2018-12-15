@@ -12,7 +12,7 @@ namespace Diary.Models
 
         void addName(FreeTime freeTime);
     
-         string getJSON();
+        string getJSON();
 
         bool isAppearInStart(string startTime);
         bool isAppearInEnd(string endTime);

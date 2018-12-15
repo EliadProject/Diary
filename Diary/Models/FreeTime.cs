@@ -12,7 +12,6 @@ namespace Diary.Models
             this.name = name;
             this.startTime = startTime;
             this.endTime = endTime;
-
         }
         public string startTime { get; set; }
         public string endTime { get; set; }
