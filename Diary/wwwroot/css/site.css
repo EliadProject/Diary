@@ -107,7 +107,8 @@ th {
 td, th {
     padding: 6px;
     border: 1px solid #ccc;
-    text-align: left;
+    text-align: center
+        ;
 }
 
 @media (max-width: 1200px) {

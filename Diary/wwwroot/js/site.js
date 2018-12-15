@@ -49,21 +49,12 @@ $("#add-btn").click(function (event) {
     } else {
         document.getElementById("error-endTime").innerHTML = "";
     }
-    //retreive data
-    /*
-    let freeTime = new Object();
-
-    freeTime.name = name.val();
-    freeTime.startTime = startTime.val();
-    freeTime.endTime = endTime.val();
-    */
-
+    
     let freeTime = {
         name: name.val(),
         startTime: startTime.val(),
         endTime: endTime.val()
     }
-
 
     $.ajax({
         url: "/diary/addPerson",

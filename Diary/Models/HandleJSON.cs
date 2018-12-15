@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Diary.Models
 {
-    public class HandleJSON
+    public class HandleJSON : IHandleData
     {
         private const string JSON_PATH = @"wwwroot/data/diary.json";
         private static HandleJSON handleJSON;
@@ -18,6 +18,10 @@ namespace Diary.Models
         private HandleJSON()
         {
              partialTimes = JsonConvert.DeserializeObject<List<PartialTime>>(File.ReadAllText(JSON_PATH));
+        }
+        private HandleJSON(string external_path)
+        {
+            partialTimes = JsonConvert.DeserializeObject<List<PartialTime>>(File.ReadAllText(JSON_PATH));
         }
         public static  HandleJSON getInstance()
         {
@@ -83,7 +87,7 @@ namespace Diary.Models
         {
             return JsonConvert.SerializeObject(partialTimes);
         }
-        public bool appearInStart(string startTime)
+        public bool isAppearInStart(string startTime)
         {
             foreach (PartialTime partialTime in partialTimes)
             {
@@ -92,7 +96,7 @@ namespace Diary.Models
             }
             return false;
         }
-        public bool appearInEnd(string endTime)
+        public bool isAppearInEnd(string endTime)
         {
             foreach (PartialTime partialTime in partialTimes)
             {
@@ -102,5 +106,6 @@ namespace Diary.Models
             return false;
         }
 
+       
     }
 }

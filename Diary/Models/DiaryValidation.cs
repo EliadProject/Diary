@@ -8,12 +8,12 @@ namespace Diary.Models
 {
     public static class DiaryValidation
     {
-        public static  bool isFreeTimeLegal(FreeTime freeTime,HandleJSON handleJSON)
+        public static  bool isFreeTimeLegal(FreeTime freeTime, DataService dataService)
         {
             //checks if start and end time appear in the list 
-            if  (!handleJSON.appearInStart(freeTime.startTime))
+            if  (!dataService.isAppearInStart(freeTime.startTime))
                 return false;
-            if (!handleJSON.appearInEnd(freeTime.endTime))
+            if (!dataService.isAppearInEnd(freeTime.endTime))
                 return false;
 
             //checks if end is bigger than start
