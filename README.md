@@ -1,4 +1,4 @@
-# Diary
+# Free Time Diary
 Manage free time with RTM diary
 
 Smart diary written according SPA concepts.
